@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "./Axios";
+import axios from "../../Requests/Axios";
 import "./Row.css";
 
 interface RowProps {

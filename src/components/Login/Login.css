@@ -1,0 +1,64 @@
+/* Login page from Netflix */
+
+html {
+    color: #aaa;
+    background: #000;
+}
+
+.nav__logo {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.login__container {
+    width: 300px;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.login__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__form .login__input {
+    margin: 10px 0;
+    background: #333333;
+    border-radius: 3px;
+}
+
+.login__form .login__button {
+    margin: 20px 0;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #E50914;
+}
+
+.login__signup {
+    display: flex;
+}
+
+.login__signup .login__remember {
+    margin-left: 0;
+}
+
+.login__signup .login__help {
+    margin-left: auto;
+}
+
+.login__new {
+    margin-top: 100px;
+}
+
+h1 {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

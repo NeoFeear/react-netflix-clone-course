@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import requests from "./Requests";
-import axios from "./Axios";
+import requests from "../../Requests/Requests";
+import axios from "../../Requests/Axios";
 import "./Banner.css";
 
 interface bannerProps {
@@ -36,7 +36,7 @@ function Banner() {
         <header className="banner" style={{
             backgroundSize: "cover",
             backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
-            backgroundPosition: "center center"
+            backgroundPosition: "center top"
         }}>
 
             <div className="banner__contents">
