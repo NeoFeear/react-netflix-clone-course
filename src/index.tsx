@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './components/Home/Home';
+
 import Login from './components/Login/Login';
+import WhosWatching from './components/WhosWatching/WhosWatching';
+import Home from './components/Home/Home';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <Login /> */}
-    <Home />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        {/* <Login /> */}
+        {/* <WhosWatching /> */}
+        <Home />
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,0 +1,35 @@
+.avatar__wrapper {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.avatar__wrapper img:hover {
+    border: 5px solid lightgrey;
+}
+
+.avatar__wrapper img {
+    width: 8vw;
+    max-width: 200px;
+    min-width: 84px;
+
+    height: 8vw;
+    max-height: 200px;
+    min-height: 84px;
+
+    box-sizing: border-box;
+    position: relative;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 4px;
+}
+
+.profile__name {
+    color: #808080;
+    margin-top: .6em;
+    font-weight: lighter;
+    line-height: 1.2em;
+}
