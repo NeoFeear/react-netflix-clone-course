@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import './index.css';
-
-import Login from './components/Login/Login';
-import WhosWatching from './components/WhosWatching/WhosWatching';
-import Home from './components/Home/Home';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
-        {/* <Login /> */}
-        {/* <WhosWatching /> */}
-        <Home />
+        <App />
     </React.StrictMode>,
+    
     document.getElementById('root')
 );
 

@@ -8,7 +8,7 @@ interface UserProps {
 
 function User({ name, picture }: UserProps) {
     return (
-        <div className="avatar__wrapper">
+        <div className="avatar__wrapper user">
             <img src={picture} alt={name} />
 
             <span className="profile__name">{name}</span>

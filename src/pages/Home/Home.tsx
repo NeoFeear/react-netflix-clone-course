@@ -4,15 +4,12 @@ import "./Home.css";
 
 import requests from '../Requests/Requests';
 
-import Navbar from './Navbar/Navbar';
 import Banner from './Banner/Banner';
-import Row from './Row/Row';
+import Row from '../../components/Row/Row';
 
 function Home() {
     return (
         <div className="home">
-            <Navbar />
-
             <Banner />
 
             <div className="row__container">

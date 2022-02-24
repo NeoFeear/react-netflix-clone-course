@@ -5,8 +5,12 @@
     margin-right: 20px;
 }
 
-.avatar__wrapper img:hover {
+.user img:hover {
     border: 5px solid lightgrey;
+}
+
+.add img:hover {
+    background: lightgrey;
 }
 
 .avatar__wrapper img {

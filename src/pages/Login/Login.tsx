@@ -4,9 +4,7 @@ import { Button, TextField } from '@mui/material';
 
 function Login() {
     return (
-        <div className="login">
-            <img className="nav__logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" />
-        
+        <div className="login">        
             <div className="login__container">
                 <h1>Sign In</h1>
 

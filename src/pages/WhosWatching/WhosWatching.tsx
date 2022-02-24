@@ -1,13 +1,11 @@
 import React from 'react';
-import AddUser from './User/AddUser';
-import User from './User/User';
 import "./WhosWatching.css";
+import User from './Users/User';
+import AddUser from './Users/AddUser';
 
 function WhosWatching() {
     return (
         <div className="whosWatching">
-            <img className="nav__logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" />
-
             <div className="whosWatching__container">
                 <h1>Who's watching?</h1>
 
