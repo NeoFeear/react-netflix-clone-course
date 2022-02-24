@@ -1,35 +1,19 @@
 import React, { useEffect, useState } from "react";
-import axios from "../../pages/Requests/Axios";
+import axios from "../../pages/Requests/axios";
 import "./Row.css";
 
 interface RowProps {
     title: string;
-    fetchUrl: string;
+    data: any[];
 }
 
-function Row({ title, fetchUrl }: RowProps) {
-    const [movies, setMovies] = useState([]);
-
-    useEffect (() => {
-
-        async function fetchData() {
-            const request = await axios.get(fetchUrl);
-            setMovies(request.data.results);
-            return request;
-        }
-
-        fetchData();
-
-    }, [fetchUrl]);
-
-    console.log(title, movies);
-
+function Row({ title, data }: RowProps) {
     return(
         <div className="row">
             <h2>{title}</h2>
 
             <div className="row__posters">
-                {movies.map((movie: any) => (
+                {data.map((movie: any) => (
                     <img className="row__poster"
                          key={movie.id}
                          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

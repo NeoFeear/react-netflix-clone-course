@@ -11,9 +11,9 @@ function App() {
         <>
             <Navbar />
 
-            <Login />
+            {/* <Login /> */}
             {/* <WhosWatching /> */}
-            {/* <Home /> */}
+            <Home />
         </>
     );
 }

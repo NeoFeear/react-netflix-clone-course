@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import requests from "../../Requests/Requests";
-import axios from "../../Requests/Axios";
+import { apiRequests } from "../../../redux/reducers/movies.reducer";
+import axios from "../../Requests/axios";
 import "./Banner.css";
 
 interface bannerProps {
@@ -17,7 +17,7 @@ function Banner() {
     useEffect(() => {
 
         async function fetchData() {
-            const request = await axios.get(requests.netflixOriginals);
+            const request = await axios.get(apiRequests.reqNetflixOriginals);
 
             setMovie(request.data.results[
                 Math.floor(Math.random() * request.data.results.length)

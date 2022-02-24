@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import axios from "axios";
+import instance from "../../pages/Requests/axios";
 import {AppDispatch} from "../store";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const language = "en-US";
 
-const apiRequests = {
+export const apiRequests = {
     reqTrending: `/trending/all/week?api_key=${API_KEY}&language=${language}&page=1`,
     reqNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213&language=${language}&page=1`,
     reqTopRated: `/movie/top_rated?api_key=${API_KEY}&language=${language}&page=1`,
@@ -19,6 +19,8 @@ interface IMovie {
 }
 
 interface IMoviesState {
+    fetched: boolean,
+
     trending: any[],
     netflixOriginals: any[],
     topRated: any[],
@@ -28,12 +30,18 @@ interface IMoviesState {
 }
 
 const initialState: IMoviesState = {
+    fetched: false,
+
     trending: [],
     netflixOriginals: [],
     topRated: [],
     actionMovies: [],
     comedyMovies: [],
     horrorMovies: []
+}
+
+const setFetchedState = (state:IMoviesState, action:any) => {
+    state.fetched = action.payload;
 }
 
 const setTrendingState = (state:IMoviesState, action:any) => {
@@ -59,6 +67,8 @@ export const moviesSlice = createSlice({
     name:'movies',
     initialState,
     reducers: {
+        setFetched: (state, action ) => setFetchedState(state, action),
+
         setTrending: (state, action ) => setTrendingState(state, action),
         setNetflixOriginals: (state, action ) => setNetflixOriginalsState(state, action),
         setTopRated: (state, action ) => setTopRatedState(state, action),
@@ -68,32 +78,31 @@ export const moviesSlice = createSlice({
     }
 })
 
-export const { setTrending, setNetflixOriginals, setTopRated, setActionMovies, setComedyMovies, setHorrorMovies } = moviesSlice.actions;
+export const { setFetched, setTrending, setNetflixOriginals, setTopRated, setActionMovies, setComedyMovies, setHorrorMovies } = moviesSlice.actions;
+
+const reqTrending = instance.get(apiRequests.reqTrending);
+const reqNetflixOriginals = instance.get(apiRequests.reqNetflixOriginals);
+const reqTopRated = instance.get(apiRequests.reqTopRated);
+const reqActionMovies = instance.get(apiRequests.reqActionMovies);
+const reqComedyMovies = instance.get(apiRequests.reqComedyMovies);
+const reqHorrorMovies = instance.get(apiRequests.reqHorrorMovies);
+
 
 export const fetchMovies = () => (dispatch:AppDispatch) => {
-    axios.get(apiRequests.reqTrending).then((res) => {
-        dispatch(setTrending(res.data.results))
-    });
-
-    axios.get(apiRequests.reqNetflixOriginals).then((res) => {
-        dispatch(setNetflixOriginals(res.data.results))
-    });
-
-    axios.get(apiRequests.reqTopRated).then((res) => {
-        dispatch(setTopRated(res.data.results))
-    });
-
-    axios.get(apiRequests.reqActionMovies).then((res) => {
-        dispatch(setActionMovies(res.data.results))
-    });
-
-    axios.get(apiRequests.reqComedyMovies).then((res) => {
-        dispatch(setComedyMovies(res.data.results))
-    });
-
-    axios.get(apiRequests.reqHorrorMovies).then((res) => {
-        dispatch(setHorrorMovies(res.data.results))
-    });
+    Promise.all([reqTrending, reqNetflixOriginals, reqTopRated, reqActionMovies, reqComedyMovies, reqHorrorMovies])
+    .then(([dataTrending, dataNetflixOriginals, dataTopRated, dataActionMovies, dataComedyMovies, dataHorrorMovies]) => {
+        
+        dispatch(setTrending(dataTrending.data.results));
+        dispatch(setNetflixOriginals(dataNetflixOriginals.data.results));
+        dispatch(setTopRated(dataTopRated.data.results));
+        dispatch(setActionMovies(dataActionMovies.data.results));
+        dispatch(setComedyMovies(dataComedyMovies.data.results));
+        dispatch(setHorrorMovies(dataHorrorMovies.data.results));
+        
+    })
+    .then(() => {
+        dispatch(setFetched(true));
+    }) 
 }
 
 export default moviesSlice.reducer;
