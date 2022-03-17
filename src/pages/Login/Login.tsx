@@ -1,8 +1,21 @@
 import React from 'react';
 import "./Login.css";
 import { Button, TextField } from '@mui/material';
+import Home from '../Home/Home';
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { setLogged } from '../../redux/reducers/user.reducer';
 
 function Login() {
+
+    const dispatch = useAppDispatch();
+    // var { userLogged } = useAppSelector( state => state.user );
+
+    function logUser() {
+        dispatch(setLogged(true));
+    }
+
     return (
         <div className="login">        
             <div className="login__container">
@@ -26,8 +39,10 @@ function Login() {
                         className="login__input"
                         variant="filled"
                     />
-
-                    <Button type="submit" className="login__button" variant="contained">Sign In</Button>
+                    
+                    <Button className="login__button" variant="contained" onClick={() => { logUser(); }}>
+                        <Link to={'/whoswatching'}>Sign In</Link>
+                    </Button>
                 </form>
 
                 <div className="login__signup">

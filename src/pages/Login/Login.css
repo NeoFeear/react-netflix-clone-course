@@ -1,6 +1,4 @@
-/* Login page from Netflix */
-
-html {
+.login > html {
     color: #aaa;
     background: #000;
 }
@@ -11,7 +9,7 @@ html {
     margin: auto;
     padding: 20px;
 
-    margin-top: 250px;
+    margin-top: 170px;
 }
 
 .login__form {

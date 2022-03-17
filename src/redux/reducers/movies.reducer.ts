@@ -14,10 +14,6 @@ export const apiRequests = {
     reqHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27&language=${language}&page=1`,
 }
 
-interface IMovie {
-    //définir le movie
-}
-
 interface IMoviesState {
     fetched: boolean,
 
@@ -67,14 +63,14 @@ export const moviesSlice = createSlice({
     name:'movies',
     initialState,
     reducers: {
-        setFetched: (state, action ) => setFetchedState(state, action),
+        setFetched: (state, action)          => setFetchedState(state, action),
 
-        setTrending: (state, action ) => setTrendingState(state, action),
-        setNetflixOriginals: (state, action ) => setNetflixOriginalsState(state, action),
-        setTopRated: (state, action ) => setTopRatedState(state, action),
-        setActionMovies: (state, action ) => setActionMoviesState(state, action),
-        setComedyMovies: (state, action ) => setComedyMoviesState(state, action),
-        setHorrorMovies: (state, action ) => setHorrorMoviesState(state, action),
+        setTrending: (state, action)         => setTrendingState(state, action),
+        setNetflixOriginals: (state, action) => setNetflixOriginalsState(state, action),
+        setTopRated: (state, action)         => setTopRatedState(state, action),
+        setActionMovies: (state, action)     => setActionMoviesState(state, action),
+        setComedyMovies: (state, action)     => setComedyMoviesState(state, action),
+        setHorrorMovies: (state, action)     => setHorrorMoviesState(state, action),
     }
 })
 
@@ -88,7 +84,7 @@ const reqComedyMovies = instance.get(apiRequests.reqComedyMovies);
 const reqHorrorMovies = instance.get(apiRequests.reqHorrorMovies);
 
 
-export const fetchMovies = () => (dispatch:AppDispatch) => {
+export const fetchMovies = () => (dispatch: AppDispatch) => {
     Promise.all([reqTrending, reqNetflixOriginals, reqTopRated, reqActionMovies, reqComedyMovies, reqHorrorMovies])
     .then(([dataTrending, dataNetflixOriginals, dataTopRated, dataActionMovies, dataComedyMovies, dataHorrorMovies]) => {
         

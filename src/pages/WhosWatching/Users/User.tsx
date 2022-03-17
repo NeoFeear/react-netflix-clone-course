@@ -7,8 +7,13 @@ interface UserProps {
 }
 
 function User({ name, picture }: UserProps) {
+
+    function redirectToHome() {
+        window.location.href = '/home';
+    }
+
     return (
-        <div className="avatar__wrapper user">
+        <div className="avatar__wrapper user" onClick={() => { redirectToHome(); }}>
             <img src={picture} alt={name} />
 
             <span className="profile__name">{name}</span>

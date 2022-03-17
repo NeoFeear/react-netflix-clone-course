@@ -20,6 +20,7 @@
     left: 20px;
     width: 150px;
     object-fit: contain;
+    margin-right: auto;
 }
 
 .nav__avatar {
@@ -28,4 +29,22 @@
     right: 20px;
     width: 40px;
     object-fit: contain;
+}
+
+.nav__language {
+    background: #0006;
+    border: 2px solid #aaa;
+    font-size: .875rem;
+    margin-left: auto;
+    padding: 5px 0;
+    right: 100px;
+    margin-right: 2rem;
+}
+
+.nav__language MenuItem {
+    color: white;
+}
+
+.nav__signin {
+    right: 100px;
 }

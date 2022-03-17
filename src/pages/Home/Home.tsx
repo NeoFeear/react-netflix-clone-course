@@ -12,13 +12,13 @@ function Home() {
 
     const {fetched, trending, netflixOriginals, topRated, actionMovies, comedyMovies, horrorMovies} = useAppSelector(
         state => state.movies
-    )
+    );
 
     useEffect(() => {
         if(!fetched) {
             dispatch(fetchMovies());
         }
-    }, [])
+    }, []);
 
     return (
         <div className="home">
