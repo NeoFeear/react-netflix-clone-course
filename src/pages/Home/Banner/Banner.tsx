@@ -30,9 +30,7 @@ function Banner() {
 
     }, []);
 
-    console.log("Banner", movie);
-
-    return(
+    return (
         <header className="banner" style={{
             backgroundSize: "cover",
             backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
