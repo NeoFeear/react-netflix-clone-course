@@ -23,8 +23,4 @@ export const userSlice = createSlice({
 
 export const { setLogged } = userSlice.actions;
 
-export const LogUser = (userLogged: boolean) => (dispatch: AppDispatch) => {
-    dispatch(setLogged(userLogged));
-}
-
 export default userSlice.reducer;

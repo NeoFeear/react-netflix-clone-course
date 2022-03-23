@@ -29,6 +29,7 @@
     padding: 10px;
     font-weight: bold;
     background-color: #E50914;
+    width: 100%;
 }
 
 .login__signup {

@@ -41,10 +41,6 @@
     margin-right: 2rem;
 }
 
-.nav__language MenuItem {
-    color: white;
-}
-
 .nav__signin {
     right: 100px;
 }

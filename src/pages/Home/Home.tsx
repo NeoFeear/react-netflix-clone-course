@@ -10,12 +10,12 @@ import { fetchMovies } from '../../redux/reducers/movies.reducer';
 function Home() {
     const dispatch = useAppDispatch();
 
-    const {fetched, trending, netflixOriginals, topRated, actionMovies, comedyMovies, horrorMovies} = useAppSelector(
+    const { fetched, trending, netflixOriginals, topRated, actionMovies, comedyMovies, horrorMovies } = useAppSelector(
         state => state.movies
     );
 
     useEffect(() => {
-        if(!fetched) {
+        if (!fetched) {
             dispatch(fetchMovies());
         }
     }, []);
