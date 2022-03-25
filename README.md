@@ -8,7 +8,7 @@
   - [ ] Edit profile
   - [ ] Delete profile
 - Home page
-  - [ ] Section by type
+  - [x] Section by type
   - [x] Top shows
 - My List (care, this is scoped to a profile)
   - [x] Add to my List
