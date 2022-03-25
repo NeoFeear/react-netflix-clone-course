@@ -2,26 +2,26 @@
 
 ## Features
 
--   Login
--   Who's watching
-    -   Create new profile
-    -   Edit profile
-    -   Delete profile
--   Home page
-    -   Section by type
-    -   Top shows
--   My List (care, this is scoped to a profile)
-    -   Add to my List
-    -   Remove from my List
--   Display details of a show
-    -   Movie: description, actors, cover, etc
-    -   Series: list of episodes, description, actors, cover,
--   Search
+- [x] Login
+- Who's watching
+  - [ ] Create new profile
+  - [ ] Edit profile
+  - [ ] Delete profile
+- Home page
+  - [ ] Section by type
+  - [x] Top shows
+- My List (care, this is scoped to a profile)
+  - [x] Add to my List
+  - [x] Remove from my List
+- Display details of a show
+  - [~] Movie: description, actors, cover, etc
+  - [~] Series: list of episodes, description, actors, cover,
+- [ ] Search
 
 ### To go further
 
--   Internationalization 
--   Display trailers from youtube
+- Internationalization
+- Display trailers from youtube
 
 ## How to get data
 
