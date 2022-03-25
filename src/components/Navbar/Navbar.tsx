@@ -24,23 +24,25 @@ function Navbar() {
         <div className="navbar">
             <img className="nav__logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" />
 
-            <ul className="nav__menu">
-                <li className="nav__menu__item">
-                    <Link to="/home">Home</Link>
-                </li>
+            {userLogged &&
+                <ul className="nav__menu">
+                    <li className="nav__menu__item">
+                        <Link to="/home">Home</Link>
+                    </li>
 
-                <li className="nav__menu__item">
-                    <Link to="/series">Series</Link>
-                </li>
+                    <li className="nav__menu__item">
+                        <Link to="/series">Series</Link>
+                    </li>
 
-                <li className="nav__menu__item">
-                    <Link to="/films">Films</Link>
-                </li>
+                    <li className="nav__menu__item">
+                        <Link to="/films">Films</Link>
+                    </li>
 
-                <li className="nav__menu__item">
-                    <Link to="/myList">My list</Link>
-                </li>
-            </ul>
+                    <li className="nav__menu__item">
+                        <Link to="/myList">My list</Link>
+                    </li>
+                </ul>
+            }
 
             <Grid item sx={{ ml: 'auto' }}>
                 {!userLogged ?

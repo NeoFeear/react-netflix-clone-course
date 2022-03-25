@@ -6,19 +6,22 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const language = "en-US";
 
 export const apiRequests = {
-    reqTopRatedSeries: `/discover/tv?sort_by=popularity.desc&api_key=${API_KEY}&language=${language}&page=1`
+    reqPopular: `/discover/tv?sort_by=popularity.desc&api_key=${API_KEY}&language=${language}&page=1`,
+    reqComedy: `/discover/tv?api_key=${API_KEY}&with_genres=35&language=${language}&page=1`,
 }
 
 interface ISeriesState {
     seriesFetched: boolean,
 
-    topRatedSeries: any[],
+    popular: any[],
+    comedy: any[],
 }
 
 const initialState: ISeriesState = {
     seriesFetched: false,
 
-    topRatedSeries: [],
+    popular: [],
+    comedy: [],
 }
 
 const setSeriesFetchedState = (state:ISeriesState, action:any) => {
@@ -26,7 +29,10 @@ const setSeriesFetchedState = (state:ISeriesState, action:any) => {
 }
 
 const setTopRatedSeriesState = (state:ISeriesState, action:any) => {
-    state.topRatedSeries = action.payload;
+    state.popular = action.payload;
+}
+const setComedySeriesState = (state:ISeriesState, action:any) => {
+    state.comedy = action.payload;
 }
 
 export const seriesSlice = createSlice({
@@ -36,19 +42,21 @@ export const seriesSlice = createSlice({
         setSeriesFetched: (state, action)  => setSeriesFetchedState(state, action),
 
         setTopRatedSeries: (state, action) => setTopRatedSeriesState(state, action),
+        setComedySeries: (state, action)   => setComedySeriesState(state, action),
     }
 })
 
-export const { setSeriesFetched, setTopRatedSeries } = seriesSlice.actions;
+export const { setSeriesFetched, setTopRatedSeries, setComedySeries } = seriesSlice.actions;
 
-const reqTopRatedSeries = instance.get(apiRequests.reqTopRatedSeries);
-
+const reqPopular = instance.get(apiRequests.reqPopular);
+const reqComedy = instance.get(apiRequests.reqComedy);
 
 export const fetchSeries = () => (dispatch: AppDispatch) => {
-    Promise.all([reqTopRatedSeries])
-    .then(([dataTopRatedSeries]) => {  
+    Promise.all([reqPopular, reqComedy])
+    .then(([dataTopRatedSeries, dataComedySeries]) => {
 
-        dispatch(setTopRatedSeries(dataTopRatedSeries.data.results));   
+        dispatch(setTopRatedSeries(dataTopRatedSeries.data.results));  
+        dispatch(setComedySeries(dataComedySeries.data.results));
 
     })
     .then(() => {

@@ -17,6 +17,7 @@ function Films() {
     return (
         <div className='films'>
             <div className='films__container'>
+                <Row title="Popular Films" data={films.popular} />
                 <Row title="Action Films" data={films.action} />
                 <Row title="Comedy Films" data={films.comedy} />
                 <Row title="Horror Films" data={films.horror} />

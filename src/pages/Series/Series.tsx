@@ -17,7 +17,8 @@ function Series() {
     return (
         <div className='series'>
             <div className='series__container'>
-                <Row title="Top Rated Series" data={series.topRatedSeries} />
+                <Row title="Popular Series" data={series.popular} />
+                <Row title="Comedy Series" data={series.comedy} />
             </div>
         </div>
     );

@@ -12,9 +12,14 @@ function Login() {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
+    let login = React.createRef<HTMLInputElement>();
+    let password = React.createRef<HTMLInputElement>();
+
     function logUser() {
-        dispatch(setLogged(true));
-        navigate('/whoswatching');
+        if (login.current?.value !== '' && password.current?.value !== '') {
+            dispatch(setLogged(true));
+            navigate('/whoswatching');
+        }
     }
 
     return (
@@ -25,20 +30,24 @@ function Login() {
                 <form action="" className="login__form">
                     <TextField
                         label="Email or phone number"
+                        inputRef={login}
                         id="email"
                         color="error"
                         type="email"
                         className="login__input"
                         variant="filled"
+                        required
                     />
 
                     <TextField
                         label="Password"
+                        inputRef={password}
                         id="password"
                         color="error"
                         type="password"
                         className="login__input"
                         variant="filled"
+                        required
                     />
 
                     <Button className="login__button" variant="contained" onClick={() => { logUser(); }}>

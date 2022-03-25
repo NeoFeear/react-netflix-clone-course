@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Row from '../../components/Row/Row';
 import './MyList.css';
 
-function getDatasFromLocalstorage() {
-    const myList: any[] = [];
-    for (let i = 0; i < localStorage.length; i++) {
-        console.log(localStorage[i]);
-    }
-}
-
 function MyList() {
+
+    const [myList, setMyList] = useState(localStorage.getItem('myList'));
+
+    const showMyList = () => {
+        if (myList) {
+            let list = JSON.parse(myList);
+
+            if (list.length > 0) {
+                return (<Row title="My List" data={list} />);
+            } else {
+                return (<h2> Your list is empty</h2 >);
+            }
+        };
+    };
+
     return (
         <div className='myList'>
             <div className='myList__container'>
-                <Row title='' data={myList} />
+                {showMyList()}
             </div>
         </div>
     );
