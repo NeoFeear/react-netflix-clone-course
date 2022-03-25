@@ -26,7 +26,7 @@ function Navbar() {
 
             {!userLogged ?
                 <Grid item sx={{ ml: 'auto' }}>
-                    <Select className="nav__language" label="Language" value="english" sx={{ color: 'white' }}>
+                    <Select className="nav__language" label="Language" value="english" sx={{ color: 'white', height: '40px', width: '130px' }}>
                         <MenuItem value="english">English</MenuItem>
                         <MenuItem value="french">Français</MenuItem>
                     </Select>

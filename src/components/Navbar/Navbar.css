@@ -35,12 +35,10 @@
     background: #0006;
     border: 2px solid #aaa;
     font-size: .875rem;
-    margin-left: auto;
-    padding: 5px 0;
-    right: 100px;
-    margin-right: 2rem;
+    margin-right: 150px;
 }
 
 .nav__signin {
     right: 100px;
+    top: -15px;
 }
