@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./User.css";
 
 interface UserProps {
@@ -7,9 +8,10 @@ interface UserProps {
 }
 
 function User({ name, picture }: UserProps) {
+    const navigate = useNavigate();
 
     function redirectToHome() {
-        window.location.href = '/home';
+        navigate('/home');
     }
 
     return (

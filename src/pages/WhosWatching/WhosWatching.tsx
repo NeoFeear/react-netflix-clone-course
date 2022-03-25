@@ -4,6 +4,7 @@ import User from './Users/User';
 import AddUser from './Users/AddUser';
 
 function WhosWatching() {
+
     return (
         <div className="whosWatching">
             <div className="whosWatching__container">

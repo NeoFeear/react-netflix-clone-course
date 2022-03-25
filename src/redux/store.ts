@@ -1,11 +1,16 @@
 import {configureStore} from '@reduxjs/toolkit';
-import moviesReducer from './reducers/movies.reducer';
+import filmsReducer from './reducers/films.reducer';
+import categoriesReducer from './reducers/categories.reducer';
+import seriesReducer from './reducers/series.reducer';
 import userReducer from './reducers/user.reducer';
 
 const store = configureStore({
     reducer: {
-        movies: moviesReducer,
-        user: userReducer
+        user: userReducer,
+
+        categories: categoriesReducer,
+        films: filmsReducer,
+        series: seriesReducer
     }
 });
 
