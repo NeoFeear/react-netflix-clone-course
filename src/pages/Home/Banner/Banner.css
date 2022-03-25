@@ -1,6 +1,6 @@
 .banner {
     object-fit: contain;
-    height: 600px;
+    height: 700px;
 }
 
 .banner__contents {
@@ -34,6 +34,7 @@
 }
 
 .banner__fadeBottom {
+    margin-top: 100px;
     height: 7.4rem;
     background: linear-gradient(
         180deg,

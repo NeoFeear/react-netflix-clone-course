@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { apiRequests } from "../../../redux/reducers/movies.reducer";
-import axios from "../../Requests/axios";
+import { apiRequests } from "../../../redux/reducers/categories.reducer";
+import axios from "../../../redux/axios";
 import "./Banner.css";
 
 interface bannerProps {
@@ -12,14 +12,14 @@ function truncate(str: string, n: number) {
 }
 
 function Banner() {
-    const [movie, setMovie]: any = useState([]);
+    const [banner, setBanner]: any = useState([]);
 
     useEffect(() => {
 
         async function fetchData() {
             const request = await axios.get(apiRequests.reqNetflixOriginals);
 
-            setMovie(request.data.results[
+            setBanner(request.data.results[
                 Math.floor(Math.random() * request.data.results.length)
             ]);
 
@@ -33,13 +33,13 @@ function Banner() {
     return (
         <header className="banner" style={{
             backgroundSize: "cover",
-            backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/original${banner.backdrop_path})`,
             backgroundPosition: "center top"
         }}>
 
             <div className="banner__contents">
                 <h1 className="banner__title">
-                    {movie?.title || movie?.original_title || movie?.name || movie?.original_name}
+                    {banner?.title || banner?.original_title || banner?.name || banner?.original_name}
                 </h1>
 
                 <div className="banner__buttons">
@@ -47,7 +47,7 @@ function Banner() {
                     <button className="banner__button">My List</button>
                 </div>
 
-                <p className="banner__description">{truncate(movie?.overview, 150)}</p>
+                <p className="banner__description">{truncate(banner?.overview, 150)}</p>
             </div>
 
             <div className="banner__fadeBottom" />
