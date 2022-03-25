@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { apiRequests } from "../../../redux/reducers/categories.reducer";
-import axios from "../../../redux/axios";
+import { apiRequests } from "../../redux/reducers/categories.reducer";
+import axios from "../../redux/axios";
 import "./Banner.css";
 
 interface bannerProps {

@@ -15,30 +15,50 @@
     transition: all 0.5s ease;
 }
 
-.nav__logo {
-    position: fixed;
-    left: 20px;
-    width: 150px;
-    object-fit: contain;
-    margin-right: auto;
-}
+/* LOGO */
+    .nav__logo {
+        position: fixed;
+        left: 20px;
+        width: 150px;
+        object-fit: contain;
+        margin-right: 25px;
+    }
 
-.nav__avatar {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    object-fit: contain;
-}
+/* MENU */
+    .nav__menu {
+        display: flex;
+        padding-left: 200px;
+        padding-top: 10px;
+    }
 
-.nav__language {
-    background: #0006;
-    border: 2px solid #aaa;
-    font-size: .875rem;
-    margin-right: 150px;
-}
+    .nav__menu__item {
+        margin-left: 20px;
+        list-style-type: none;
+        font-weight: bold;
+    }
 
-.nav__signin {
-    right: 100px;
-    top: -15px;
-}
+    .nav__menu__item:hover {
+        color: white;
+    }
+
+/* PAS CONNECTÉ */
+    .nav__language {
+        background: #0006;
+        border: 2px solid #aaa;
+        font-size: .875rem;
+        margin-right: 150px;
+    }
+
+    .nav__signin {
+        right: 100px;
+        top: -18px;
+    }
+
+/* CONNECTÉ */
+    .nav__avatar {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        object-fit: contain;
+    }

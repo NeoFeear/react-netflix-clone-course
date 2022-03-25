@@ -1,0 +1,8 @@
+#modal {
+    background-color: #141414;
+}
+
+#poster__img {
+    display: flex;
+    justify-content: center;
+}

@@ -11,7 +11,6 @@ function Login() {
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    // var { userLogged } = useAppSelector( state => state.user );
 
     function logUser() {
         dispatch(setLogged(true));

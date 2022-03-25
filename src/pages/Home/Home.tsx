@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import "./Home.css";
 
-import Banner from './Banner/Banner';
+import Banner from '../../components/Banner/Banner';
 import Row from '../../components/Row/Row';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { fetchCategories } from '../../redux/reducers/categories.reducer';
